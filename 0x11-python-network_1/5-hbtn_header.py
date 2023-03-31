@@ -6,7 +6,7 @@ import requests
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    path = sys.argv[1]
 
-    r = requests.get(url)
-    print(r.headers.get("X-Request-Id"))
+    res = requests.get(path)
+    print(res.headers.get("X-Request-Id"))
