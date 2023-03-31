@@ -8,8 +8,10 @@ import sys
 import urllib.request
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    path = sys.argv[1]
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        print(dict(response.headers).get("X-Request-Id"))
+    res_data = urllib.request.Request(path)
+    with urllib.request.urlopen(res_data) as response:
+        dict_data = dict(response.headers)
+        print(dict_data["X-Request-Id"])
+        
